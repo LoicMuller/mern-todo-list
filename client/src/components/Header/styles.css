@@ -1,0 +1,16 @@
+@import url("../../styles.css");
+
+.header {
+  padding: 8px;
+  text-align: center;
+
+  background-color: var(--dark-gray-color);
+}
+
+.header h1 {
+  color: white;
+}
+
+.header span {
+  color: var(--pink-color);
+}

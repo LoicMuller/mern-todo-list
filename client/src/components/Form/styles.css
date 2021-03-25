@@ -1,0 +1,46 @@
+@import url("../../styles.css");
+
+.form {
+  position: relative;
+
+  margin: 70px 0 0 0;
+  text-align: center;
+
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 0 12px 45px;
+
+  border: 2px solid var(--gray-color);
+  border-radius: 12px;
+
+  background: none;
+  outline: none;
+}
+
+.input,
+.input::placeholder {
+  color: var(--light-gray-color);
+}
+
+.form button {
+  position: absolute;
+  padding: 10px;
+
+  border: none;
+  outline: none;
+  background: none;
+
+  cursor: pointer;
+}
+
+.addBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 25px;
+}

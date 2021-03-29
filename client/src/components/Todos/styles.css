@@ -1,3 +1,16 @@
-h1 {
-  color: white;
+@import url("../../styles.css");
+
+.todo {
+  margin: 15px 0 0 0;
+  padding: 10px;
+
+  border-radius: 8px;
+  background-color: var(--dark-gray-color);
+}
+
+.tasks-n {
+  margin-top: 20px;
+
+  font-weight: 700;
+  color: var(--white-color);
 }

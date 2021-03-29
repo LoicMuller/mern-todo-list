@@ -10,11 +10,17 @@ const Todos = () => {
 
   console.log(todos);
 
-  return (
-    <div>
-      <h1>Todos</h1>
-      <Todo />
-    </div>
+  return !todos.length ? (
+    <p>Loading...</p>
+  ) : (
+    <>
+      <p className="tasks-n">Tasks - {todos.length}</p>
+      {todos.map((todo) => (
+        <div className="todo" key={todo._id}>
+          <Todo todo={todo} />
+        </div>
+      ))}
+    </>
   );
 };
 

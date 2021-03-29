@@ -1,0 +1,71 @@
+@import url("../../../styles.css");
+
+.todo {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  flex-wrap: wrap;
+}
+
+.check-btn,
+.check-btn-true,
+.expandBtn {
+  background: none;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+
+.check-btn svg,
+.check-btn-true svg {
+  width: 25px;
+}
+
+.todo p {
+  margin-left: 10px;
+
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white-color);
+
+  text-transform: capitalize;
+}
+
+.expandBtn {
+  position: absolute;
+  top: 25%;
+  transform: translateY(-25%);
+
+  right: 10px;
+  cursor: auto;
+}
+
+.expand-container {
+  width: 100%;
+  margin: 5px 30px 0 25px;
+
+  display: flex;
+  align-items: center;
+}
+
+.expand-container p {
+  font-size: 12px;
+  color: var(--light-gray-color);
+}
+
+.expand-container > div {
+  margin-left: 10px;
+}
+
+.expand-container button {
+  background: none;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+
+  color: var(--light-gray-color);
+}

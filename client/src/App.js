@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 
 import { getTodos } from "./actions/todos";
@@ -9,18 +9,19 @@ import Form from "./components/Form/Form";
 import Todos from "./components/Todos/Todos";
 
 const App = () => {
+  const [currentId, setCurrentId] = useState(null);
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(getTodos());
-  }, [dispatch]);
+  }, [currentId, dispatch]);
 
   return (
     <>
       <Header />
       <div className="container">
-        <Form />
-        <Todos />
+        <Form currentId={currentId} setCurrentId={setCurrentId} />
+        <Todos setCurrentId={setCurrentId} />
       </div>
     </>
   );

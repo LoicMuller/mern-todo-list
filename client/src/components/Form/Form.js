@@ -1,22 +1,36 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./styles.css";
 
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
-import { createTodo } from "../../actions/todos";
+import { createTodo, updateTodo } from "../../actions/todos";
 
-const Form = () => {
+const Form = ({ currentId, setCurrentId }) => {
   const [todoData, setTodoData] = useState({
     message: "",
   });
-
+  const todo = useSelector((state) =>
+    currentId ? state.todos.find((t) => t._id === currentId) : null
+  );
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    if (todo) setTodoData(todo);
+  }, [todo]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    dispatch(createTodo(todoData));
-    setTodoData({ ...todoData, message: "" });
+    if (currentId) {
+      dispatch(updateTodo(currentId, todoData));
+    } else {
+      dispatch(createTodo(todoData));
+    }
+
+    setCurrentId(null);
+    setTodoData({
+      message: "",
+    });
   };
 
   return (
